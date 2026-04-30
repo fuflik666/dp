@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запис | Royal Barber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_orange.css">
+</head>
+<body class="booking-page">
+
+    <header class="main-header">
+        <div class="top-bar">
+            <a href="index.html" class="logo-link"><h2 class="logo-text">ROYAL<span>BARBER</span></h2></a>
+        </div>
+    </header>
+
+    <section class="booking-v2">
+        <div class="booking-wrapper">
+            <div class="booking-steps">
+                <h2>Онлайн Бронювання</h2>
+                
+                <div class="step-box">
+                    <label>1. Коли бажаєте завітати?</label>
+                    <input type="text" id="smart-calendar" placeholder="Оберіть дату візиту">
+                </div>
+
+                <div id="time-slots" class="step-box hidden">
+                    <label>2. Вільний час на обрану дату:</label>
+                    <div class="slots-grid">
+                        <button class="slot">10:00</button>
+                        <button class="slot busy">11:00</button> <button class="slot">12:00</button>
+                        <button class="slot">14:00</button>
+                        <button class="slot">15:30</button>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <label>3. Контактні дані:</label>
+                    <input type="text" placeholder="Ваше ім'я" class="dark-input">
+                    <input type="tel" placeholder="+380" class="dark-input">
+                </div>
+
+                <button class="btn-confirm">ПІДТВЕРДИТИ ВІЗИТ</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/uk.js"></script>
+    <script>
+        flatpickr("#smart-calendar", {
+            "locale": "uk",
+            minDate: "today",
+            dateFormat: "d.m.Y",
+            onChange: function(selectedDates, dateStr, instance) {
+                document.getElementById('time-slots').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

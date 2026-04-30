@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Barber | Ексклюзивний сервіс</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <h2 class="logo-text">ROYAL<span>BARBER</span></h2>
+                </a>
+            </div>
+            <div class="info-area">
+                <div class="contacts">
+                    <span>📍 вул. Остафія Дашковича, 20</span>
+                    <span>📞 098 430 54 23 | 093 430 54 23</span>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="services.html">Послуги</a></li>
+                <li><a href="jobs.html">Вакансії</a></li>
+                <li><a href="school.html">Школа</a></li>
+                <li><a href="booking.html" class="btn-gold">ЗАПИСАТИСЯ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-slider swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/slide1.jpg');">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1>Більше ніж просто стрижка</h1>
+                    <p>Традиції та стиль у самому центрі Черкас</p>
+                    <a href="booking.html" class="btn-main">ОБРАТИ ЧАС</a>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/slide2.jpg');">
+                <div class="hero-content">
+                    <h1>Твій ідеальний образ</h1>
+                    <p>Майстри, які знають свою справу</p>
+                    <a href="services.html" class="btn-main">НАШІ ПОСЛУГИ</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </section>
+
+    <section class="map-section" data-aos="zoom-in">
+        <h2 class="section-title">Ми в центрі міста</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.3463945415754!2d32.0624!3d49.4444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d14b9b9b9b9b9b%3A0x9b9b9b9b9b9b9b9b!2z0LLRg9C7LiDQntGB0YLQsNGE0ZbRjyDQNCw0YjQutC-0LLQuNGH0LAsIDIwLCDQp9C10YDQutCw0YHQuCwg0KfQtdGA0LrQsNGB0YzQutCwINC-0LHQuy4sIDE4MDAw!5e0!3m2!1suk!2sua!4v1620000000000!5m2!1suk!2sua" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>КОНТАКТИ</h3>
+                <p>📍 м. Черкаси</p>
+                <p>вул. Остафія Дашковича, 20</p>
+                <p>📞 098 430 54 23</p>
+                <p>📞 093 430 54 23</p>
+                
+                <div class="social-icons">
+                    <a href="https://instagram.com/royal_barber" target="_blank" class="icon-ios inst">
+                        <img src="img/inst.png" alt="Instagram" class="footer-icon">
+                    </a>
+                    <a href="https://t.me/royal_barber" target="_blank" class="icon-ios tg">
+                        <img src="img/tg.png" alt="Telegram" class="footer-icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>ІНФОРМАЦІЯ ПРО КОМПАНІЮ</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">ПРО НАС</a></li>
+                    <li><a href="services.html">ПОСЛУГИ ТА ЦІНИ</a></li>
+                    <li><a href="jobs.html">РОБОТА В БАРБЕРШОПІ</a></li>
+                    <li><a href="school.html">ШКОЛА</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>UA | RU</p>
+            <p>© 2026 Royal Barber. Створено для дипломного проекту.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Анімації
+        AOS.init({ duration: 1000, once: true });
+
+        // Слайдер
+        const swiper = new Swiper('.hero-slider', {
+            loop: true,
+            effect: 'fade',
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,772 @@
+/* ОБНУЛЕННЯ СТИЛІВ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0a0a0a;
+    --dark-grey: #1a1a1a;
+    --gold: #b8860b;
+    --white: #f5f5f5;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ШАПКА */
+.main-header {
+    background-color: var(--black);
+    border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid #222;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.logo-text span {
+    color: var(--white);
+}
+
+.contacts span {
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.socials a {
+    color: var(--gold);
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.socials a:hover { color: var(--white); }
+
+/* НАВІГАЦІЯ */
+.main-nav {
+    padding: 15px 0;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.main-nav li { margin: 0 20px; }
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--gold);
+}
+
+.btn-gold {
+    border: 1px solid var(--gold);
+    padding: 8px 20px;
+    background: var(--gold);
+    color: var(--black) !important;
+    border-radius: 2px;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070') center/cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 15px 35px;
+    font-weight: bold;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-main { background: var(--gold); color: var(--black); }
+.btn-outline { border: 1px solid var(--white); color: var(--white); }
+
+.btn-main:hover { background: var(--white); }
+.btn-outline:hover { background: var(--white); color: var(--black); }
+
+/* БЛОК ПЕРЕВАГ */
+.features {
+    padding: 100px 5%;
+    background: var(--dark-grey);
+}
+
+.features .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+}
+
+.feature-item .icon { font-size: 3rem; margin-bottom: 15px; display: block; }
+.feature-item h3 { color: var(--gold); margin-bottom: 10px; }
+
+/* АНІМАЦІЇ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeInUp 1s ease-out forwards; }
+.fade-in-delayed { animation: fadeInUp 1.5s ease-out forwards; opacity: 0; }
+
+
+
+
+
+/* СТИЛІ ДЛЯ СТОРІНКИ ПОСЛУГ */
+.page-title {
+    text-align: center;
+    padding: 60px 0;
+    background: #111;
+}
+
+.page-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--gold);
+}
+
+.services-grid {
+    padding: 50px 5%;
+}
+
+.services-grid .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--dark-grey);
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-10px);
+}
+
+.service-img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.service-info h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.service-info p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    height: 40px; /* Щоб текст був однакової висоти */
+}
+
+.price {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn-book {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.btn-book:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+
+
+/* СТИЛІ ДЛЯ ФОРМИ ЗАПИСУ */
+.booking-section {
+    padding: 50px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.booking-container {
+    background: #151515;
+    padding: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--gold);
+    max-width: 600px;
+    width: 100%;
+}
+
+.booking-container h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--gold); font-weight: bold; }
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 3px;
+}
+
+.form-row { display: flex; gap: 20px; }
+.form-row .form-group { flex: 1; }
+
+/* КАРТКИ МАЙСТРІВ */
+.barber-selection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.barber-card input { display: none; }
+.barber-info {
+    background: #222;
+    padding: 15px 10px;
+    text-align: center;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.barber-card input:checked + .barber-info {
+    border-color: var(--gold);
+    background: #2a2a2a;
+}
+
+.barber-info .name { display: block; font-weight: bold; font-size: 0.9rem; }
+.barber-info .rank { font-size: 0.7rem; color: var(--gold); text-transform: uppercase; }
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--gold);
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-submit:hover { background: white; }
+
+
+
+
+
+/* ВИПРАВЛЕННЯ ЛОГОТИПА */
+.logo-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logo-link:hover .logo-text span {
+    color: var(--gold); /* Ефект при наведенні на лого */
+}
+
+/* МАПА */
+.map-section {
+    padding: 80px 0;
+    background: var(--black);
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.map-container {
+    filter: grayscale(1) invert(0.9) contrast(1.2); /* Робимо карту стильною (чорно-білою) */
+    transition: 0.5s;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.map-container:hover {
+    filter: grayscale(0) invert(0) contrast(1); /* При наведенні стає кольоровою */
+}
+
+/* ДОДАТКОВІ АНІМАЦІЇ */
+.btn-gold {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-gold:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* КАРТА */
+.map-info {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.map-info p { color: var(--gold); }
+
+/* ДИЗАЙН ЗАПИСУ (V2) */
+.booking-v2 {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.booking-wrapper {
+    background: #111;
+    border: 1px solid #222;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.step-box { margin-bottom: 30px; }
+.step-box label { display: block; color: var(--gold); margin-bottom: 15px; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+.hidden { display: none; }
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+}
+
+.slot {
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slot:hover:not(.busy) { border-color: var(--gold); color: var(--gold); }
+
+.slot.busy {
+    background: #1a1a1a;
+    color: #444; /* СІРЕНЬКИЙ КОЛІР (ЗАЙНЯТО) */
+    cursor: not-allowed;
+    border: none;
+}
+
+.dark-input {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    border: 1px solid #333;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.btn-confirm {
+    width: 100%;
+    padding: 20px;
+    background: var(--gold);
+    color: black;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+
+
+
+/* СТИЛІ ДЛЯ СТОРІНКИ ПРО НАС */
+.about-hero {
+    padding: 100px 5%;
+    /* ТЕПЕР ТУТ ТВІЙ ЛОКАЛЬНИЙ ФАЙЛ */
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url('img/about-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--gold); margin-bottom: 20px; }
+.about-hero p { max-width: 600px; font-size: 1.1rem; color: #ccc; }
+
+.team-section { padding: 80px 5%; background: var(--dark-grey); }
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: var(--black);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #222;
+    transition: 0.4s;
+}
+
+.team-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+.member-img {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    filter: grayscale(1); /* Чорно-білі фото майстрів (дуже стильно) */
+    transition: 0.5s;
+}
+
+.team-card:hover .member-img { filter: grayscale(0); }
+
+.team-card h3 { color: var(--gold); margin-bottom: 5px; }
+.team-card span { display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px; color: #777; }
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 5%;
+    background: var(--gold);
+}
+
+.stat-item { text-align: center; color: var(--black); }
+.stat-item .num { display: block; font-size: 2.5rem; font-weight: bold; font-family: 'Playfair Display', serif; }
+.stat-item .text { text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
+
+
+/* Робимо так, щоб меню не розповзалося */
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav li {
+    margin: 0 15px; /* Трохи зменшив відступи, щоб влізло більше кнопок */
+}
+
+/* Щоб логотип зліва не "тікав" */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+
+
+
+/* ВАКАНСІЇ ТА ШКОЛА */
+.jobs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 80px 5%;
+}
+
+.job-card {
+    background: #111;
+    padding: 30px;
+    border-left: 4px solid var(--gold);
+}
+
+.job-list {
+    margin: 20px 0;
+    list-style: square;
+    padding-left: 20px;
+    color: #ccc;
+}
+
+.job-offer {
+    font-weight: bold;
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+/* ШКОЛА HERO */
+/* Оновлений блок Школи */
+.school-hero {
+    height: 70vh; /* Трохи збільшив висоту для солідності */
+    background: url('img/school-bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center 30%; /* ОЦЕЙ ПАРАМЕТР ОПУСКАЄ ФОТО. Змінюй % (напр. 40%, 60%), щоб підігнати під своє фото */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Кнопка консультації */
+.btn-consult {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 35px;
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-consult:hover {
+    background: var(--gold);
+    color: black;
+    transform: scale(1.05);
+}
+
+.school-overlay {
+    background: rgba(0,0,0,0.8);
+    padding: 60px;
+    width: 100%;
+}
+
+.school-info { padding: 80px 5%; }
+.course-price {
+    margin-top: 30px;
+    font-size: 2rem;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+}
+
+.check-list { list-style: none; margin: 20px 0; line-height: 2; }
+
+
+
+/* Стилі для слайдера */
+.hero-slider {
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    /* ЗАМІНИ НА ЦЕ */
+    background-size: contain; /* Покаже фото повністю, не обрізаючи */
+    background-repeat: no-repeat; /* Не дублювати фото */
+    background-position: center; /* Центрувати фото */
+    background-color: #000; /* Якщо фото менше екрану, фон буде чорним */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--gold) !important;
+}
+
+/* Футер в стилі Doberman */
+.main-footer {
+    background: #000;
+    color: #fff;
+    padding: 60px 10% 20px;
+    border-top: 2px solid #1a1a1a;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 25px;
+    filter: invert(1); /* Робимо іконки білими */
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+
+.btn-main {
+    padding: 15px 40px;
+    background-color: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: 0.4s;
+    display: inline-block; /* Щоб відступи працювали правильно */
+}
+
+.btn-main:hover {
+    background-color: var(--white);
+    transform: scale(1.05);
+}
+
+
+/* Контейнер іконки (App Store Style) */
+.icon-ios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+.icon-ios.inst { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.icon-ios.tg { background: linear-gradient(180deg, #2AABEE 0%, #229ED9 100%); }
+
+/* Стиль самої картинки всередині */
+.footer-icon {
+    width: 25px; /* Розмір іконки */
+    height: 25px;
+    object-fit: contain;
+    
+    /* ЦЕЙ ФІЛЬТР РОБИТЬ БУДЬ-ЯКУ ТЕМНУ КАРТИНКУ БІЛОЮ */
+    filter: brightness(0) invert(1); 
+    
+    pointer-events: none; /* Щоб картинка не заважала кліку */
+}
+
+.icon-ios:hover {
+    transform: scale(1.1);
+}
